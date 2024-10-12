@@ -1,20 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from '../pages/Home';
+import Home from '../pages/Home/Home';
 import AuthOutlet from '@auth-kit/react-router/AuthOutlet'
 import Login from '../pages/Login/Login';
 import AuthProvider from 'react-auth-kit';
-import store from '../store/store';
+import auth_store from '../store/authStore';
+import SignUp from '../pages/SignUp/SignUp';
+import Cart from '../pages/Cart/Cart';
 
 
 const AppRoutes = () => {
   return (
-    <AuthProvider store={store}>
+    <AuthProvider store={auth_store}>
         <Router>
             <Routes>
                 <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<SignUp />} />
                 <Route element={<AuthOutlet fallbackPath='/login' />}>
                 <Route path='/' element={<Home />} />
+                <Route path='/cart' element={<Cart />} />
                 </Route>
             </Routes>
             
