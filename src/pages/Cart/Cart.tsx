@@ -68,7 +68,7 @@ const CartPage: React.FC = () => {
             <button className="btn btn-warning" onClick={handleClearCart}>
               Clear Cart
             </button>
-            <button className="btn btn-primary ml-2">
+            <button className="btn btn-primary m-2">
               Proceed to Checkout
             </button>
           </div>
