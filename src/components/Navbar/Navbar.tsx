@@ -6,14 +6,19 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import useSignOut from 'react-auth-kit/hooks/useSignOut';
 import { useNavigate } from 'react-router-dom';
-
+import useAuthUser from 'react-auth-kit/hooks/useAuthUser';
 
 import "./Navbar.css";
 
-function Navigationbar() {
-  const signOut = useSignOut()
-  const navigate = useNavigate();
+// Define the user structure
+interface User {
+  name: string; // Assuming `user` is a string, change this if it's different
+}
 
+function Navigationbar() {
+  const signOut = useSignOut();
+  const navigate = useNavigate();
+  const auth = useAuthUser<User>(); // Provide the user type to useAuthUser()
 
   const handleLogout = () => {
     signOut();
@@ -58,7 +63,7 @@ function Navigationbar() {
           
           <Nav>
             <NavDropdown 
-              title="User" // User icon as the dropdown toggle
+              title={auth?.name || 'User'} // Use optional chaining to avoid errors if auth is null
               id="userDropdown" 
               align="end" 
             >

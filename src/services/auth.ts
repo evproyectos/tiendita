@@ -11,7 +11,7 @@ interface LoginResponse {
   accessToken: string;
 }
 
-// Define the login API function
+
 export const login = (formData: FormData): Promise<AxiosResponse<LoginResponse>> => {
   return axios.post('https://dummyjson.com/auth/login', formData);
 };
