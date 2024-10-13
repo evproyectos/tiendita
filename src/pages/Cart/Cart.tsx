@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAppSelector, useAppDispatch } from '../../store/hooks/hooks';
 import { removeFromCart, clearCart } from '../../store/slices/cartSlice';
-import Navigationbar from '../../components/Navbar';
+import Navigationbar from '../../components/Navbar/Navbar';
 
 const CartPage: React.FC = () => {
   const cart = useAppSelector(state => state.cart.items);
@@ -19,18 +19,10 @@ const CartPage: React.FC = () => {
     dispatch(clearCart());
   };
 
-  const handleTestClick = () => {
-    console.log('Cart Products:', cart);
-  };
 
   return (
     <div className="container my-4">
       <Navigationbar/>
-      <div className="text-center my-4">
-        <button className="btn btn-secondary" onClick={handleTestClick}>
-          Test: Show Cart in Console
-        </button>
-      </div>
       <h1>Your Cart</h1>
 
       {/* Cart is empty */}

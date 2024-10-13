@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from '../pages/Home/Home';
 import AuthOutlet from '@auth-kit/react-router/AuthOutlet'
@@ -7,6 +6,7 @@ import AuthProvider from 'react-auth-kit';
 import auth_store from '../store/authStore';
 import SignUp from '../pages/SignUp/SignUp';
 import Cart from '../pages/Cart/Cart';
+import Shop from '../pages/Shop/Shop';
 
 
 const AppRoutes = () => {
@@ -19,6 +19,7 @@ const AppRoutes = () => {
                 <Route element={<AuthOutlet fallbackPath='/login' />}>
                 <Route path='/' element={<Home />} />
                 <Route path='/cart' element={<Cart />} />
+                <Route path='/shop' element={<Shop />} />
                 </Route>
             </Routes>
             
