@@ -7,6 +7,7 @@ import auth_store from '../store/authStore';
 import SignUp from '../pages/SignUp/SignUp';
 import Cart from '../pages/Cart/Cart';
 import Shop from '../pages/Shop/Shop';
+import SearchResults from '../pages/Search/SearchResults';
 
 
 const AppRoutes = () => {
@@ -20,6 +21,7 @@ const AppRoutes = () => {
                   <Route path='/' element={<Home />} />
                   <Route path='/cart' element={<Cart />} />
                   <Route path='/shop' element={<Shop />} />
+                  <Route path='/search-results' element={<SearchResults />} />
                 </Route>
             </Routes>
             
